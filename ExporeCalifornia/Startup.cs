@@ -22,6 +22,18 @@ namespace ExporeCalifornia {
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseExceptionHandler("/error.html");
+
+            app.Use(async (context, next) =>
+            {
+                if (context.Request.Path.Value.Contains("/invalid"))
+                {
+                    throw new Exception("Some exception");
+                }
+
+                await next();
+            });
+
             app.UseFileServer();
         }
     }
