@@ -21,7 +21,7 @@ namespace ExporeCalifornia {
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
             app.UseExceptionHandler("/error.html");
             
-            if (Configuration.GetValue<bool>("EnableDeveloperExceptions"))
+            if (Configuration.GetValue<bool>("FeatureToggles:DeveloperExceptions"))
             {
                 app.UseDeveloperExceptionPage();
             }
