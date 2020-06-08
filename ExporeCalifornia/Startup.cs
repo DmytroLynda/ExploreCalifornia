@@ -22,29 +22,7 @@ namespace ExporeCalifornia {
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseRouting();
-
-            app.Use(async (context, next) =>
-            {
-                if (context.Request.Path.StartsWithSegments("/hello"))
-                {
-                    await context.Response.WriteAsync("Hello from /hello URL. \n");
-                }
-                await next.Invoke();
-            });
-
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello world!");
-            });
-
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapGet("/", async context =>
-            //    {
-            //        await context.Response.WriteAsync("Hello World!");
-            //    });
-            //});
+            app.UseFileServer();
         }
     }
 }
