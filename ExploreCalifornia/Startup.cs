@@ -19,6 +19,8 @@ namespace ExporeCalifornia {
             {
                 DeveloperExceptions = Configuration.GetValue<bool>("FeatureToggles:DeveloperExceptions")
             });
+
+            services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +43,12 @@ namespace ExporeCalifornia {
                 }
 
                 await next();
+            });
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("Default",
+                    "{controller=Home}/{action=Index}/{id?}");
             });
 
             app.UseFileServer();
