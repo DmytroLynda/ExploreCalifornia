@@ -4,8 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace ExploreCalifornia.Controllers
 {
     [Route("blog")]
@@ -17,12 +15,12 @@ namespace ExploreCalifornia.Controllers
             return View();
         }
 
-        [Route(@"blog/{year:min(2000)}/{month:range(1,12)}/{key}")]
+        [Route(@"{year:min(2000)}/{month:range(1,12)}/{key}")]
         public IActionResult Post(int year, int month, string key) 
         {
             ViewBag.Title = "My blog post";
             ViewBag.Posted = DateTime.Now;
-            ViewBag.Author = "Jess Chadwick";
+            ViewBag.Author = "Dmytro Lynda";
             ViewBag.Body = "This is a great blog post, don't you think?";
 
             return View();
