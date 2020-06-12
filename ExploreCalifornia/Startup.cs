@@ -1,7 +1,10 @@
+using ExploreCalifornia.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 using System;
 
 namespace ExporeCalifornia {
@@ -21,6 +24,12 @@ namespace ExporeCalifornia {
             });
 
             services.AddMvc(options => options.EnableEndpointRouting = false);
+
+            services.AddDbContext<BlogDataContext>(options =>
+            {
+                var connectionString = Configuration.GetConnectionString("BlogDataContext");
+                //options.
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
