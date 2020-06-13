@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
 
-namespace ExploreCalifornia.Model {
+namespace ExploreCalifornia.Models {
     public class Post {
         public long Id { get; set; }
 
