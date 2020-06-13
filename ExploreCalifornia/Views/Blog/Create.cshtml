@@ -1,5 +1,5 @@
 ﻿@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
-@model ExploreCalifornia.Model.Post
+@model ExploreCalifornia.Models.Post
 @{
     Layout = "_Layout";
 }
@@ -11,11 +11,11 @@
             <p>
                 <label asp-for="Title"></label>
                 <input asp-for="Title" class="form-control" placeholder="Blog post title" />
-                <span asp-validation-for="Title">></span>
+                <span asp-validation-for="Title"></span>
             </p>
             <p>
                 <label asp-for="Body"></label>
-                <input asp-for="Body" class="form-control" placeholder="Blog post content" />
+                <textarea asp-for="Body" class="form-control" placeholder="Blog post content"></textarea>
                 <span asp-validation-for="Body"></span>
             </p>
             <p>

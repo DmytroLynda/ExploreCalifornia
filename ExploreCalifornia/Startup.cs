@@ -1,4 +1,4 @@
-using ExploreCalifornia.Model;
+using ExploreCalifornia.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -28,7 +28,8 @@ namespace ExporeCalifornia {
             services.AddDbContext<BlogDataContext>(options =>
             {
                 var connectionString = Configuration.GetConnectionString("BlogDataContext");
-                //options.
+
+                options.UseSqlServer(connectionString);
             });
         }
 
