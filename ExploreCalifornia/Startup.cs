@@ -23,6 +23,8 @@ namespace ExporeCalifornia {
                 DeveloperExceptions = Configuration.GetValue<bool>("FeatureToggles:DeveloperExceptions")
             });
 
+            services.AddTransient<FormattingService>();
+
             services.AddMvc(options => options.EnableEndpointRouting = false);
 
             services.AddDbContext<BlogDataContext>(options =>
