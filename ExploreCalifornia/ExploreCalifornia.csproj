@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <None Include="wwwroot\scripts\jquery-3.1.1.min.js" />
+    <None Include="wwwroot\scripts\site.js" />
   </ItemGroup>
 
   <ItemGroup>
